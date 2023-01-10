@@ -7,22 +7,22 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    /* outline: 2px solid red; */
 }
 
-body {
+/* body {
     overflow-x: hidden;
-}
+}  */
 :root{
     font-size: 62.5%;
     --main-color-:#3484E1;
     --main-color-dark-: #002F67;
     --secondary-color-: #A4C81C;
 }
-
 /*#region               OverHeader */
 section.overHeader{
+    width: 100%;
     position: relative;
-    width: 100vw;
     background-color: var(--main-color-);
     display: flex;
     padding: 0 7vw;   
@@ -55,7 +55,7 @@ section div{
 .right{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-evenly;
     flex-grow: 1;
 }
@@ -82,11 +82,12 @@ section div{
 /*#region               Header */
 header{
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     background-color: #272727;
     display: flex;
     padding: 0px 6vw;
+    z-index: 100;
 }
 header.fixed{
     position: fixed;
@@ -98,13 +99,12 @@ header .nav{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-  
 }
 header ul li{
     color: white;
     list-style: none;
     text-decoration: none;
-    margin: 25px;
+    margin: 0px 25px;
     position: relative;
 }
 header ul li a{
@@ -137,7 +137,8 @@ header ul li a{
     background-image: url('./img/image_2.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
+    max-width: 100vw;
+    width: 100%;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -159,6 +160,11 @@ header ul li a{
     width: 50vw;
     display: flex;
     justify-content: space-around;
+}
+.sectionHome .btnContainerHome a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .sectionHome .btnContainerHome a:first-child {
     font-family: 'Roboto', sans-serif;
@@ -189,10 +195,202 @@ header ul li a{
     cursor: pointer;
 }
 /* #endregion */
-section.test{
-    height: 100vh;
+
+
+/*#region               Carousel  */
+.containerTest {
+    background-color: var(--main-color-dark-);
+    height: 92vh;
+    width: 100%;
+    display: flex;
 }
+.slider {
+    position: relative;
+    /* border-radius: 15px; */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 7px #00000060;
+}
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slider-container img {
+    clip-path: ellipse(0 0 at 0% 0%);
+    transition: clip-path 3s;
+}
+.slider-container img:first-child {
+    clip-path: ellipse(750px 750px at 50% 50%);
+}
+#back,
+#forward {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    padding: 10px 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.4s ease-out;
+    width: fit-content;
+}
+#back i,
+#forward i {
+    font-size: 4rem;
+}
+
+#back:hover,
+#forward:hover {
+    zoom: 115%;
+}
+
+#back {
+    margin-left: 30px;
+}
+#forward {
+    right: 0;
+    margin-right: 30px;
+}
+
+.content {
+    color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 5;
+    text-align: center;
+    background: #ffffff22;
+    backdrop-filter: blur(2px);
+    transition: 1s;
+}
+.content h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+}
+.content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 200;
+    margin-top: 6px;
+}
+
+#next-img {
+    z-index: -5;
+}  
+/* #endregion */
+/*#region               Tarifs */
+section.tarifs{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-image: url(./img/motto-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem;
+    box-shadow: inset 5px 5px 40px 5px rgba(26, 26, 26, 0.588);
+}
+section.tarifs .carte{
+    width: 25vw;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  1.5vw;
+    padding: 4rem;
+    background-color: rgba(128, 128, 128, 0.442);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 2px 6px 5px #2727275f;
+    transition: all 0.3s ease-in-out;
+}
+section.tarifs .carte:hover{
+    transform: translateY(-4rem);
+    cursor:pointer ;
+}
+section.tarifs .carte .icon i{
+    color: #fff;
+    font-size: 7rem;
+}
+section.tarifs .carte .texte{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    color: white;
+    padding: 2rem 2rem 0rem;
+}
+section.tarifs .carte .parag{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: white;
+    padding: 2rem;    
+    text-align: center;
+}
+section.tarifs .carte .prix{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    color: white;
+    padding: 1rem 2rem;
+    border: solid 5px white;
+    margin: 1rem;
+}
+/* #endregion */
+
 /*#region               Media-800px */
+@media screen and (max-width: 600px) {
+    :root {
+        font-size: 50%;
+    }
+    .sectionHome h1 {
+        font-size: 8rem;
+    }
+    .right {
+        flex-grow: unset;
+    }
+    .right a {
+        text-align: center;
+        padding: 4rem 4rem;
+        font-size: 2rem;
+    }
+    .sectionHome {
+        background-position: center;
+    }
+    .sectionHome .btnContainerHome{
+        width: 100vw;
+        justify-content: space-evenly;
+    }
+    .sectionHome .btnContainerHome a {
+        text-align: center;
+        margin: 0 2rem;
+    }
+    section.overHeader {
+        padding: 0 2rem;
+    }
+    section.tarifs{
+        background-position: center;
+    }
+    section.tarifs .carte{
+        width: unset;
+        min-width: 300px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     :root {
         font-size: 45%;
@@ -216,19 +414,22 @@ section.test{
     header .nav{
         position: absolute;
         left: -100%;
-        top: 10vmin;
+        top: 2vmin;
         flex-direction: column;
         background-color: #272727;
         width: 100%;
         text-align: center;
         transition: 0.3s;
+        padding: 15px;
     }
     header .nav.active{
         left: 0;
     }
     header ul li{
-        margin: 10px 0px;
-        font-size: 20px;
+        margin: 6rem 0px;
+    }
+    header ul li a{
+        font-size:2.8rem;
     }
     .left h1{
         display: none;
@@ -240,8 +441,18 @@ section.test{
     .right a{
         width: 25vw;
         margin: 0px 5px;
-        font-size: calc(1.6rem);
+        font-size: calc(1.8rem);
+    }
+    .sectionHome .btnContainerHome {
+        width: 100%;
     }
 }
+@media screen and (max-width: 1426px) {
+
+    section.tarifs .carte{
+        margin: 4rem;
+    }
+}
+
 
 /* #endregion */
