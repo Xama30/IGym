@@ -195,8 +195,6 @@ header ul li a{
     cursor: pointer;
 }
 /* #endregion */
-
-
 /*#region               Carousel  */
 .containerTest {
     background-color: var(--main-color-dark-);
@@ -314,26 +312,74 @@ section.tarifs .carte{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin:  1.5vw;
     padding: 4rem;
-    background-color: rgba(128, 128, 128, 0.442);
+    background-color:#002F67;
     backdrop-filter: blur(10px);
     box-shadow: 2px 2px 6px 5px #2727275f;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 15px;
 }
 section.tarifs .carte:hover{
     transform: translateY(-4rem);
-    cursor:pointer ;
+    cursor: pointer;
+}
+section.tarifs .carte::before{
+    content: "";
+    background: conic-gradient(#fff 20deg, transparent 120deg);
+    width: 180%;
+    height: 180%;
+    position: absolute;
+    animation: rotate 3s linear infinite;
+}
+section.tarifs .carte::after{
+    content: "";
+    width: 97%;
+    height: 97%;
+    border-radius: 15px;
+    backdrop-filter: blur(0px);
+    position: absolute;
+    box-shadow: inset 5px 5px 20px 10px #0000008c;
+}
+@keyframes rotate{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+section.tarifs .carte.carte1{
+background-color: var(--main-color-);
+}
+section.tarifs .carte.carte2{
+    background-color:var(--secondary-color-);
+}
+section.tarifs .carte.carte3{
+    background-color:var(--main-color-dark-);
+}
+section.tarifs .carte.carte1::after{
+    background-color: var(--main-color-);
+}
+section.tarifs .carte.carte2::after{
+        background-color:var(--secondary-color-);
+}
+section.tarifs .carte.carte3::after{
+        background-color:var(--main-color-dark-);
 }
 section.tarifs .carte .icon i{
     color: #fff;
     font-size: 7rem;
+    z-index: 1;
 }
 section.tarifs .carte .texte{
     font-family: 'Roboto', sans-serif;
     font-size: 3rem;
     color: white;
     padding: 2rem 2rem 0rem;
+    z-index: 1;
 }
 section.tarifs .carte .parag{
     font-family: 'Roboto', sans-serif;
@@ -341,6 +387,7 @@ section.tarifs .carte .parag{
     color: white;
     padding: 2rem;    
     text-align: center;
+    z-index: 1;
 }
 section.tarifs .carte .prix{
     font-family: 'Roboto', sans-serif;
@@ -349,10 +396,11 @@ section.tarifs .carte .prix{
     padding: 1rem 2rem;
     border: solid 5px white;
     margin: 1rem;
+    z-index: 1;
 }
 /* #endregion */
 
-/*#region               Media-800px */
+/*#region               Media-600px */
 @media screen and (max-width: 600px) {
     :root {
         font-size: 50%;
@@ -390,7 +438,8 @@ section.tarifs .carte .prix{
         min-width: 300px;
     }
 }
-
+/* #endregion */
+/*#region               Media-800px */
 @media screen and (max-width: 800px) {
     :root {
         font-size: 45%;
@@ -426,7 +475,7 @@ section.tarifs .carte .prix{
         left: 0;
     }
     header ul li{
-        margin: 4rem 0px; 
+        margin: 4rem 0px; /* size pas correct cell */
     }
     header ul li a{
         font-size:2.8rem;
@@ -447,6 +496,8 @@ section.tarifs .carte .prix{
         width: 100%;
     }
 }
+/* #endregion */
+/*#region               Media-1436px */
 @media screen and (max-width: 1426px) {
 
     section.tarifs .carte{
