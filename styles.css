@@ -468,6 +468,44 @@ section.tarifs .carte .prix {
   z-index: 1;
 }
 /* #endregion */
+/*#region               Footer */
+footer#footer {
+  padding: 100px calc(3rem + 6vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./img/footer-bg.jpg);
+  color: white;
+  font-size: 2rem;
+}
+footer#footer .footer__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer#footer .footer__content_2--container {
+  display: flex;
+  flex-direction: column;
+}
+footer#footer .footer__content_2--container .footer__logo {
+  display: flex;
+  justify-content: center;
+}
+footer#footer .footer__content_2--container .footer__logo img {
+  height: 10rem;
+}
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__number {
+  display: flex;
+}
+.footer__social {
+  display: flex;
+}
+/* #endregion */
 
 /*#region               Media-600px */
 @media screen and (max-width: 600px) {
