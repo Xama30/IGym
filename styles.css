@@ -130,7 +130,8 @@ header ul li a {
   justify-content: center;
   align-items: center;
 }
-header ul li:hover a {
+header ul li:hover a,
+header ul li:active a {
   transform: scaleY(0);
 }
 header ul li::before {
@@ -168,7 +169,8 @@ header ul li:nth-child(5)::before {
 header ul li:nth-child(6)::before {
   content: "Boutique";
 }
-header ul li:hover::before {
+header ul li:hover::before,
+header ul li:active::before {
   transform: scaleY(1);
 }
 .hamburger {
