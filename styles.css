@@ -385,10 +385,10 @@ section.tarifs .carte {
   margin: 1.5vw;
   padding: 4rem;
   background-color: #002f67;
-  backdrop-filter: blur(10px);
   box-shadow: 2px 2px 6px 5px #2727275f;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  -webkit-overflow: hidden;
   border-radius: 15px;
 }
 section.tarifs .carte:hover {
@@ -398,17 +398,19 @@ section.tarifs .carte:hover {
 section.tarifs .carte::before {
   content: "";
   background: conic-gradient(#fff 20deg, transparent 120deg);
+  -webkit-background: conic-gradient(#fff 20deg, transparent 120deg);
+  -moz-background: conic-gradient(#fff 20deg, transparent 120deg);
   width: 180%;
   height: 180%;
   position: absolute;
   animation: rotate 3s linear infinite;
+  -webkit-animation: rotate 3s linear infinite;
 }
 section.tarifs .carte::after {
   content: "";
   width: 97%;
   height: 97%;
   border-radius: 15px;
-  backdrop-filter: blur(0px);
   position: absolute;
   box-shadow: inset 5px 5px 20px 10px #0000008c;
 }
