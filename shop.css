@@ -1,0 +1,44 @@
+:root {
+    font-size: 62.5%;
+    --main-color-: #3484e1;
+    --main-color-dark-: #002f67;
+    --secondary-color-: #a4c81c;
+    --dark-color-: #272727;
+    --dark-color-light: #303030;
+}
+section.shop{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+section.shop .item{
+    position: relative;
+    width: 80vw;
+    background-color: var(--main-color-);
+    margin: 4rem 0rem;
+    border-radius: 20px;
+}
+section.shop .item .left{
+    border: solid 3px red;
+    margin: 2rem;
+    min-width: 20vw;
+    border-radius: 20%;
+}
+section.shop .item .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+section.shop .item .right h1{
+    font-size: 3.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+section.shop .item .right p{
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif
+}
+

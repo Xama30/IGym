@@ -1,0 +1,47 @@
+ANIMATION DES CARTES
+
+/*section.tarifs .carte::before {
+  content: "";
+  background: conic-gradient(#fff 20deg, transparent 120deg);
+  -webkit-background: conic-gradient(#fff 20deg, transparent 120deg);
+  -moz-background: conic-gradient(#fff 20deg, transparent 120deg);
+  width: 180%;
+  height: 180%;
+  position: relative;
+  animation: rotate 3s linear infinite;
+  -webkit-animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}*/
+/*section.tarifs .carte::after {
+  content: "";
+  width: 97%;
+  height: 97%;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: inset 5px 5px 20px 10px #0000008c;
+}*/
+/*section.tarifs .carte.carte1 {
+  background-color: var(--main-color-);
+}
+section.tarifs .carte.carte2 {
+  background-color: var(--secondary-color-);
+}
+section.tarifs .carte.carte3 {
+  background-color: var(--main-color-dark-);
+}
+section.tarifs .carte.carte1::after {
+  background-color: var(--main-color-);
+}
+section.tarifs .carte.carte2::after {
+  background-color: var(--secondary-color-);
+}
+section.tarifs .carte.carte3::after {
+  background-color: var(--main-color-dark-);
+}*/

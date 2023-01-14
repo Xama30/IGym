@@ -130,6 +130,12 @@ header ul li a {
   justify-content: center;
   align-items: center;
 }
+/* header ul:nth-child(even){
+  transform: scaleY(0);
+}
+header ul:nth-child(odd){
+  transform: scaleY(1);
+} */
 header ul li:hover a,
 header ul li:active a {
   transform: scaleY(0);
@@ -150,24 +156,6 @@ header ul li::before {
   font-family: "Roboto", sans-serif;
   color: white;
   cursor: pointer;
-}
-header ul li:nth-child(1)::before {
-  content: "Accueil";
-}
-header ul li:nth-child(2)::before {
-  content: "À propos";
-}
-header ul li:nth-child(3)::before {
-  content: "Cours";
-}
-header ul li:nth-child(4)::before {
-  content: "Évènements";
-}
-header ul li:nth-child(5)::before {
-  content: "Nouveautés";
-}
-header ul li:nth-child(6)::before {
-  content: "Boutique";
 }
 header ul li:hover::before,
 header ul li:active::before {
@@ -254,7 +242,7 @@ header ul li:active::before {
 /*#region               Carousel  */
 .containerTest {
   background-color: var(--main-color-dark-);
-  height: 92vh;
+  height: 80vh;
   width: 100%;
   display: flex;
 }
@@ -362,7 +350,7 @@ section.tarifs {
   /*    Comment edit une image de BG    */
 
   /* Methode #1 */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(#ffffff7a, #ffffff7a),
     url(./img/motto-bg.jpg);
 
   /* Methode #2 */
@@ -384,73 +372,34 @@ section.tarifs .carte {
   justify-content: center;
   margin: 1.5vw;
   padding: 4rem;
-  background-color: #002f67;
-  box-shadow: 2px 2px 6px 5px #2727275f;
+  /*background-color: #86868664;*/
+  background-color: #3485e1;
+  box-shadow: 3px 3px 15px 5px #2727272d, inset 1px 1px 5px 5px #2727277d;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   -webkit-overflow: hidden;
   border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: solid 10px  #2b6fbc;
 }
 section.tarifs .carte:hover {
   transform: translateY(-4rem);
   cursor: pointer;
 }
-section.tarifs .carte::before {
-  content: "";
-  background: conic-gradient(#fff 20deg, transparent 120deg);
-  -webkit-background: conic-gradient(#fff 20deg, transparent 120deg);
-  -moz-background: conic-gradient(#fff 20deg, transparent 120deg);
-  width: 180%;
-  height: 180%;
-  position: absolute;
-  animation: rotate 3s linear infinite;
-  -webkit-animation: rotate 3s linear infinite;
-}
-section.tarifs .carte::after {
-  content: "";
-  width: 97%;
-  height: 97%;
-  border-radius: 15px;
-  position: absolute;
-  box-shadow: inset 5px 5px 20px 10px #0000008c;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-section.tarifs .carte.carte1 {
-  background-color: var(--main-color-);
-}
-section.tarifs .carte.carte2 {
-  background-color: var(--secondary-color-);
-}
-section.tarifs .carte.carte3 {
-  background-color: var(--main-color-dark-);
-}
-section.tarifs .carte.carte1::after {
-  background-color: var(--main-color-);
-}
-section.tarifs .carte.carte2::after {
-  background-color: var(--secondary-color-);
-}
-section.tarifs .carte.carte3::after {
-  background-color: var(--main-color-dark-);
-}
 section.tarifs .carte .icon i {
-  color: #fff;
+  color: var(--main-color-dark-);
   font-size: 7rem;
   z-index: 1;
+  margin: 1rem 0px;
 }
 section.tarifs .carte .texte {
   font-family: "Roboto", sans-serif;
   font-size: 3rem;
-  color: white;
+  color: #fff;
   padding: 2rem 2rem 0rem;
+  margin: 1rem 0px;
   z-index: 1;
+  text-align: center;
 }
 section.tarifs .carte .parag {
   font-family: "Roboto", sans-serif;
@@ -458,6 +407,7 @@ section.tarifs .carte .parag {
   color: white;
   padding: 2rem;
   text-align: center;
+  margin: 1rem 0px;
   z-index: 1;
 }
 section.tarifs .carte .prix {
@@ -465,9 +415,10 @@ section.tarifs .carte .prix {
   font-size: 3rem;
   color: white;
   padding: 1rem 2rem;
-  border: solid 5px white;
-  margin: 1rem;
+  border: solid 1px white;
+  margin: 1rem 0px;
   z-index: 1;
+  background-color: var(--secondary-color-);
 }
 /* #endregion */
 /*#region               Footer */
@@ -545,7 +496,9 @@ footer#footer .footer__content_2--container .footer__logo img {
   background-color: var(--main-color-dark-);
   padding: calc(0.2rem + 0.66667vw) calc(1rem + 0.66667vw);
 }
-
+section.tarifs .carte{
+  margin-top: 4vh;
+}
 /* #endregion */
 
 /*#region               Media-600px */
