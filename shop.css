@@ -1,44 +1,71 @@
 :root {
-    font-size: 62.5%;
-    --main-color-: #3484e1;
-    --main-color-dark-: #002f67;
-    --secondary-color-: #a4c81c;
-    --dark-color-: #272727;
-    --dark-color-light: #303030;
+  font-size: 62.5%;
+  --main-color-: #3484e1;
+  --main-color-dark-: #002f67;
+  --secondary-color-: #a4c81c;
+  --dark-color-: #272727;
+  --dark-color-light: #303030;
 }
-section.shop{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+section.shop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: var(--main-color-);
 }
-section.shop .item{
-    position: relative;
-    width: 80vw;
-    background-color: var(--main-color-);
-    margin: 4rem 0rem;
-    border-radius: 20px;
+section.shop .item {
+  position: relative;
+  width: 45vw;
+  background-color: white;
+  margin: 2rem 0rem;
+  border-radius: 20px;
 }
-section.shop .item .left{
-    border: solid 3px red;
-    margin: 2rem;
-    min-width: 20vw;
-    border-radius: 20%;
+section.shop .item .left img {
+  border: solid 3px rgb(0, 0, 0);
+  margin: 2rem;
+  object-fit: cover;
+  height: 15vw;
+  width: 15vw;
 }
-section.shop .item .right{
+section.shop .item .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem;
+}
+section.shop .item .right h1 {
+  font-size: calc(0.5rem + 1.3vw);
+  font-family: "Roboto", sans-serif;
+}
+section.shop .item .right p {
+  font-size: calc(0.5rem + 0.7vw);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+/*#region           Media 600px */
+@media screen and (max-width: 600px) {
+  section.shop .item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    margin: 2rem;
+    width: 60vw;
+  }
+  section.shop .item .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  section.shop .item .left img {
+    min-width: 50vw;
+    min-height: 50vw;
+  }
+  section.shop .item .right {
+    margin: 0px 2rem 2rem;
+  }
+  section.shop .item .right h1 {
+    margin: 1rem;
+  }
 }
-section.shop .item .right h1{
-    font-size: 3.5rem;
-    font-family: 'Roboto', sans-serif;
-}
-section.shop .item .right p{
-    font-size: 2rem;
-    text-align: center;
-    font-family: 'Roboto', sans-serif
-}
-
+/* #endregion */

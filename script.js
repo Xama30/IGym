@@ -27,7 +27,7 @@ function Slide(idx) {
     img.style.opacity = "0";
   });
   imgs[idx].style.opacity = "100%";
-  imgs[idx].style.clipPath = "ellipse(750px 750px at 50% 50%)";
+  imgs[idx].style.clipPath = "ellipse(1200px 1200px at 50% 50%)";
   anime();
 }
 

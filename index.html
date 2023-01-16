@@ -67,7 +67,79 @@
     </section>
 
     <!-- #endregion -->
+    <!--#region             Citation -->
+    <section id="citation">
+      <h4 class="citation">No Pain, No Gain</h4>
+    </section>
+    <!-- #endregion -->
+    <!--#region             Bienfait -->
+    <section id="bienfait">
+      <h2>Les bienfaits de l'entrainement</h2>
 
+      <div class="bienfaitContainer">
+        <div class="bienfait bienfait-1">
+          <h5 class="bienfait--titre bienfait--titre-1">Santé cardiaque</h5>
+          <p class="bienfait--para bienfait--para-1">
+            L'entraînement physique améliore la circulation sanguine et renforce
+            le muscle cardiaque, réduisant ainsi le risque de maladies
+            cardiaques.
+          </p>
+        </div>
+        <div class="bienfait bienfait-2">
+          <h5 class="bienfait--titre bienfait--titre-2">
+            Réduction des maladies chroniques
+          </h5>
+          <p class="bienfait--para bienfait--para-2">
+            L'exercice régulier peut aider à prévenir le diabète, l'obésité et
+            d'autres maladies chroniques en régulant les niveaux de sucre dans
+            le sang et en augmentant la sensibilité à l'insuline.
+          </p>
+        </div>
+        <div class="bienfait bienfait-3">
+          <h5 class="bienfait--titre bienfait--titre-3">Densité osseuse</h5>
+          <p class="bienfait--para bienfait--para-3">
+            L'entraînement physique, en particulier les exercices de résistance,
+            peut aider à augmenter la densité osseuse et à prévenir
+            l'ostéoporose.
+          </p>
+        </div>
+        <div class="bienfait bienfait-4">
+          <h5 class="bienfait--titre bienfait--titre-4">
+            Force musculaire et flexibilité
+          </h5>
+          <p class="bienfait--para bienfait--para-4">
+            L'entraînement physique augmente la force musculaire et améliore la
+            flexibilité, ce qui peut aider à prévenir les blessures et à
+            améliorer les performances physiques.
+          </p>
+        </div>
+        <div class="bienfait bienfait-5">
+          <h5 class="bienfait--titre bienfait--titre-5">Humeur et sommeil</h5>
+          <p class="bienfait--para bienfait--para-5">
+            L'exercice régulier peut améliorer l'humeur et la qualité du sommeil
+            en augmentant les niveaux d'endorphines et en réduisant le stress.
+          </p>
+        </div>
+        <div class="bienfait bienfait-6">
+          <h5 class="bienfait--titre bienfait--titre-6">Stress et anxiété</h5>
+          <p class="bienfait--para bienfait--para-6">
+            L'entraînement physique peut aider à réduire le stress et l'anxiété
+            en évacuant les tensions physiques et en améliorant l'humeur.
+          </p>
+        </div>
+        <div class="bienfait bienfait-7">
+          <h5 class="bienfait--titre bienfait--titre-7">
+            Forme physique globale
+          </h5>
+          <p class="bienfait--para bienfait--para-7">
+            L'entraînement physique régulier permet de maintenir une forme
+            physique globale en améliorant la endurance, la force et la
+            flexibilité.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion -->
     <!--#region             Carousel -->
     <div class="containerTest">
       <div class="slider">
@@ -214,45 +286,16 @@
       </div>
     </footer>
     <!-- #endregion -->
-    <!--#region              -->
-
-    <!-- JS File -->
-    <script src="script.js"></script>
   </body>
-
+  <!--#region       Script  -->
   <!-- Bootstrap -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"
   ></script>
-
-  <script>
-    const hamburger = document.querySelector(".hamburger");
-    const nav = document.querySelector(".nav");
-
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      nav.classList.toggle("active");
-    });
-
-    document.querySelectorAll("header li").forEach((n) =>
-      n.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        nav.classList.remove("active");
-      })
-    );
-
-    const header = document.querySelector("header");
-    const vmin = Math.min(window.innerWidth, window.innerHeight) / 100;
-
-    function handleScroll() {
-      if (window.scrollY > 14 * vmin) {
-        header.classList.add("fixed");
-      } else {
-        header.classList.remove("fixed");
-      }
-    }
-    window.addEventListener("scroll", handleScroll);
-  </script>
+  <!-- JS File -->
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+  <!-- #endregion -->
 </html>

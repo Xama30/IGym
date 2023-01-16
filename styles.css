@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap");
 
 /*font-family: 'Poppins', sans-serif;*/
 /*font-family: 'Roboto', sans-serif;*/
@@ -9,9 +10,9 @@
   scroll-behavior: smooth;
   /* outline: 2px solid red; */
 }
-/* body {
-    overflow-x: hidden;
-}  */
+body {
+  overflow-x: hidden;
+}
 :root {
   font-size: 62.5%;
   --main-color-: #3484e1;
@@ -293,9 +294,71 @@ header ul li:nth-child(6)::before {
   cursor: pointer;
 }
 /* #endregion */
+/*#region               Citation */
+section#citation {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  background-color: var(--main-color-);
+}
+.citation {
+  font-size: 8rem;
+  font-family: "Moon Dance", cursive;
+  color: white;
+}
+/* #endregion */
+/*#region               Bienfait */
+section#bienfait {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem;
+  background-color: var(--main-color-dark-);
+}
+section#bienfait h2 {
+  font-size: 4rem;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.bienfaitContainer {
+  display: flex;
+  flex-basis: 40rem;
+  flex-wrap: wrap;
+}
+.bienfait {
+  display: flex;
+  flex-basis: 40rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin: 1rem;
+  padding: 3rem 3rem;
+  transition: transform 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+  background-color: var(--secondary-color-);
+}
+.bienfait:hover,
+.bienfait:active {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.bienfait h5 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+.bienfait p {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+/* #endregion */
 /*#region               Carousel  */
 .containerTest {
-  background-color: var(--main-color-dark-);
+  background-color: var(--main-color-);
   height: 80vh;
   width: 100%;
   display: flex;
@@ -327,7 +390,7 @@ header ul li:nth-child(6)::before {
   transition: clip-path 3s;
 }
 .slider-container img:first-child {
-  clip-path: ellipse(750px 750px at 50% 50%);
+  clip-path: ellipse(1200px 1200px at 50% 50%);
 }
 #back,
 #forward {
@@ -423,6 +486,7 @@ section.tarifs .carte {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 4vh;
   margin: 1.5vw;
   padding: 4rem;
   /*background-color: #86868664;*/
@@ -517,6 +581,14 @@ footer#footer .footer__content_2--container .footer__logo img {
 .footer__social {
   display: flex;
 }
+.footer__social i {
+  margin: 0 1rem;
+  transition: all 0.5s ease-in-out;
+}
+.footer__social i:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
 .footer__content .col {
   list-style: none;
   text-align: left;
@@ -549,8 +621,16 @@ footer#footer .footer__content_2--container .footer__logo img {
   background-color: var(--main-color-dark-);
   padding: calc(0.2rem + 0.66667vw) calc(1rem + 0.66667vw);
 }
-section.tarifs .carte {
-  margin-top: 4vh;
+.footer__number .footer__number--title {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.footer__number .footer__number--title i {
+  margin-right: 2rem;
+}
+.footer__number {
+  display: flex;
+  flex-direction: column;
 }
 /* #endregion */
 
@@ -606,6 +686,9 @@ section.tarifs .carte {
   footer#footer .footer__content .col {
     align-items: center;
   }
+  section#bienfait {
+    padding: 2rem;
+  }
 }
 /* #endregion */
 /*#region               Media-800px */
@@ -615,6 +698,7 @@ section.tarifs .carte {
   }
   .hamburger {
     display: block;
+    z-index: 2;
   }
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
@@ -631,21 +715,30 @@ section.tarifs .carte {
   }
   header .nav {
     position: absolute;
-    left: -100%;
+    right: -100%;
     top: 2vmin;
     flex-direction: column;
     background-color: #272727;
     width: 60%;
-    height: 70vh;
+    height: 100vh;
     text-align: center;
     transition: 0.3s;
     padding: 15px;
   }
+  header ul li:hover::before,
+  header ul li:active::before {
+    transform: scaleY(0);
+  }
+  header ul li:hover::after,
+  header ul li:active::after {
+    transform: scaleY(1);
+  }
   header .nav.active {
-    left: 0;
+    right: 0;
   }
   header ul li {
     width: 100%;
+    height: 100%;
   }
   header ul li::before {
     font-size: 2.8rem;
@@ -653,6 +746,7 @@ section.tarifs .carte {
   }
   header ul li a {
     font-size: 2.8rem;
+    z-index: 2;
   }
   .left h1 {
     display: none;
