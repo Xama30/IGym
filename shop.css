@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 :root {
   font-size: 62.5%;
   --main-color-: #3484e1;
@@ -6,23 +8,44 @@
   --dark-color-: #272727;
   --dark-color-light: #303030;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* outline: 2px solid red; */
+}
+header{
+  position: fixed;
+}
 section.shop {
+  position: absolute;
+  background-image: url(./img/Gym.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background: var(--main-color-);
 }
 section.shop .item {
   position: relative;
-  width: 45vw;
   background-color: white;
-  margin: 2rem 0rem;
-  border-radius: 20px;
+  margin: 4rem 15rem;
+  border-radius: 0px;
+  box-shadow: 2px 2px 10px 1px #272727;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  border: solid 4px var(--secondary-color-);
+}
+section.shop .item:hover{
+transform: scale(1.05);
+}
+section.shop .item .left{
+  flex-grow: 2;
 }
 section.shop .item .left img {
-  border: solid 3px rgb(0, 0, 0);
+  border: solid 2px rgb(0, 0, 0);
   margin: 2rem;
   object-fit: cover;
   height: 15vw;
@@ -31,19 +54,34 @@ section.shop .item .left img {
 section.shop .item .right {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin: 2rem;
 }
 section.shop .item .right h1 {
-  font-size: calc(0.5rem + 1.3vw);
+  font-size: calc(1em + 2vw);
   font-family: "Roboto", sans-serif;
+  margin: 2vmin;
+  border-bottom: 3px solid var(--main-color-dark-);
 }
 section.shop .item .right p {
-  font-size: calc(0.5rem + 0.7vw);
+  font-size: calc(1rem + 1vw);
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
+/*#region           Media 1000px */
+@media screen and (max-width: 1000px) {
+  section.shop .item{
+    align-items: center;
+    margin: 4rem 5rem;
+  }
+  section.shop .item .left img{
+    min-width: 25vw;
+    min-height: 25vw;
+  }
+
+}
+/* #endregion */
 /*#region           Media 600px */
 @media screen and (max-width: 600px) {
   section.shop .item {
