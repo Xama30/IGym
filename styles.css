@@ -264,12 +264,12 @@ header ul li:nth-child(6)::before {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.sectionHome .btnContainerHome a:first-child {
-  font-family: "Roboto", sans-serif;
   font-size: 3.4rem;
   font-weight: 300;
   color: #fff;
+}
+.sectionHome .btnContainerHome a:first-child {
+  font-family: "Roboto", sans-serif;
   padding: 1.5rem 3rem;
   border-radius: 10px 3rem;
   background-color: var(--main-color-dark-);
@@ -281,9 +281,7 @@ header ul li:nth-child(6)::before {
 }
 .sectionHome .btnContainerHome a:last-child {
   font-family: "Roboto", sans-serif;
-  font-size: 3.4rem;
-  font-weight: 300;
-  color: #fff;
+
   padding: 1.5rem 3rem;
   border-radius: 10px 3rem;
   background-color: var(--secondary-color-);
@@ -314,6 +312,7 @@ section#bienfait {
   justify-content: center;
   padding: 10rem;
   background-color: var(--main-color-dark-);
+  height: fit-content;
 }
 section#bienfait h2 {
   font-size: 4rem;
@@ -660,6 +659,7 @@ footer#footer .footer__content_2--container .footer__logo img {
   .sectionHome .btnContainerHome a {
     text-align: center;
     margin: 0 2rem;
+    font-size: calc(10px + 2vw);
   }
   section.overHeader {
     padding: 0 2rem;
@@ -716,7 +716,7 @@ footer#footer .footer__content_2--container .footer__logo img {
   header .nav {
     position: absolute;
     right: -100%;
-    top: 2vmin;
+    top: 0;
     flex-direction: column;
     background-color: #272727;
     width: 60%;
@@ -738,14 +738,16 @@ footer#footer .footer__content_2--container .footer__logo img {
   }
   header ul li {
     width: 100%;
-    height: 100%;
+    height: fit-content;
   }
-  header ul li::before {
+  header ul li::after {
     font-size: 2.8rem;
     padding: unset;
+    height: calc(fit-content + 20px);
   }
   header ul li a {
     font-size: 2.8rem;
+    height: 3rem;
     z-index: 2;
   }
   .left h1 {
@@ -758,7 +760,7 @@ footer#footer .footer__content_2--container .footer__logo img {
   .right a {
     width: 25vw;
     margin: 0px 5px;
-    font-size: calc(1.8rem);
+    font-size: calc(1.8rem + 1vw);
   }
   .sectionHome .btnContainerHome {
     width: 100%;
